@@ -131,27 +131,11 @@ declare module 'astro:content' {
 		: any;
 
 	type DataEntryMap = {
-		"note": Record<string, {
+		"blog": Record<string, {
   id: string;
   body?: string;
-  collection: "note";
-  data: InferEntrySchema<"note">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"post": Record<string, {
-  id: string;
-  body?: string;
-  collection: "post";
-  data: InferEntrySchema<"post">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"tag": Record<string, {
-  id: string;
-  body?: string;
-  collection: "tag";
-  data: InferEntrySchema<"tag">;
+  collection: "blog";
+  data: InferEntrySchema<"blog">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -169,6 +153,7 @@ declare module 'astro:content' {
 	type ExtractEntryFilterType<T> = ExtractLoaderTypes<T>['entryFilter'];
 	type ExtractCollectionFilterType<T> = ExtractLoaderTypes<T>['collectionFilter'];
 	type ExtractErrorType<T> = ExtractLoaderTypes<T>['error'];
+	type ExtractDataType<T> = ExtractLoaderTypes<T>['data'];
 
 	type LiveLoaderDataType<C extends keyof LiveContentConfig['collections']> =
 		LiveContentConfig['collections'][C]['schema'] extends undefined
