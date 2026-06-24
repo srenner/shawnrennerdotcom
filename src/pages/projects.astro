@@ -1,0 +1,34 @@
+---
+import CanBusHeroImage from '../assets/mcp2515.png';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="CANgrow"
+	description="Inbdoor Gardening Automation"
+    pubDate={new Date('2026-06-24 12:00:00.000')}
+	heroImage={CanBusHeroImage}
+>
+	<p>
+		My latest project is an automated indoor gardening system I call CANgrow. 
+		CAN-bus enabled microcontroller nodes are chained together to a Raspberry Pi central hub and automate tasks for light and water management in your indoor garden.
+	</p>
+
+	<p>
+		The project is currently in active development, and I hope to have a demo soon. When the code is ready for release,
+		I will also compile a complete list of parts so people can build their own.
+		You can check out the repo <a href="https://github.com/srenner/cangrow" target="_blank">on my GitHub</a>.
+	</p>
+	<div style="display: none">
+		<h2>Tech Stack</h2>
+
+		<h3>"Farm" Node (the brain)</h3>
+		<ul>
+			<li>Raspberry Pi 4 or 5</li>
+			<li>PiCAN3 CAN Bus Board</li>
+			<li>Vuejs 3.x for the management UI</li>
+			<li>FastAPI</li>
+			<li>SQLite</li>
+		</ul>
+	</div>
+</Layout>
