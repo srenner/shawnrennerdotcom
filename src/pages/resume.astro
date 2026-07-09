@@ -1,33 +1,31 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 ---
-
 <Layout
 	title="Resume"
 	description="Download PDF"
-    pubDate={new Date('2026-07-08 12:00:00.000')}
+	pubDate={new Date('2026-07-09 12:00:00.000')}
 >
-	<div>Some content above the resume</div>
 	<div class="pdf-viewer">
-		<iframe
-			src="/shawn-renner.pdf#toolbar=0&navpanes=0&view=FitH"
-			width="100%"
-			height="calc(100vh - 200px)"
-			title="Resume"
-		></iframe>
+		<object data="/shawn-renner.pdf#pagemode=none" type="application/pdf">
+			<p>
+				Your browser doesn't support embedded PDFs.
+				<a href="/shawn-renner.pdf">Download instead</a>.
+			</p>
+		</object>
 	</div>
 </Layout>
-
 <style>
 .pdf-viewer {
 	width: 100%;
-	overflow-y: auto;
+	max-width: 850px;
+	aspect-ratio: 8.5 / 11;
 	border: 1px solid #ccc;
-	margin-top: 2rem;
+	margin: 2rem auto;
 }
-
-.pdf.viewer iframe {
+.pdf-viewer object {
 	display: block;
+	width: 100%;
+	height: 100%;
 }
 </style>
-
