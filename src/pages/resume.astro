@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="Resume"
+	description="Download PDF"
+    pubDate={new Date('2026-07-08 12:00:00.000')}
+>
+	<div>Some content above the resume</div>
+	<div class="pdf-viewer">
+		<iframe
+			src="/shawn-renner.pdf#toolbar=0&navpanes=0&view=FitH"
+			width="100%"
+			height="calc(100vh - 200px)"
+			title="Resume"
+		></iframe>
+	</div>
+</Layout>
+
+<style>
+.pdf-viewer {
+	width: 100%;
+	overflow-y: auto;
+	border: 1px solid #ccc;
+	margin-top: 2rem;
+}
+
+.pdf.viewer iframe {
+	display: block;
+}
+</style>
+
