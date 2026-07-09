@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+<Layout
+	title="Resume"
+	description="Download PDF"
+	pubDate={new Date('2026-07-09 12:00:00.000')}
+>
+	<div class="pdf-viewer">
+		<object data="/shawn-renner.pdf#pagemode=none" type="application/pdf">
+			<p>
+				Your browser doesn't support embedded PDFs.
+				<a href="/shawn-renner.pdf">Download instead</a>.
+			</p>
+		</object>
+	</div>
+</Layout>
+<style>
+.pdf-viewer {
+	width: 100%;
+	max-width: 850px;
+	aspect-ratio: 8.5 / 11;
+	border: 1px solid #ccc;
+	margin: 2rem auto;
+}
+.pdf-viewer object {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+</style>
