@@ -1,17 +1,20 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, MOBILE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2>
+			<a href="/">
+				<span class="desktop-title">{SITE_TITLE}</span>
+    			<span class="mobile-title">{MOBILE_TITLE}</span>
+			</a>
+		</h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/projects">Projects</HeaderLink>
 			<HeaderLink href="/resume">Resume</HeaderLink>
-			<!-- <HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink> -->
 		</div>
 		<div class="social-links">
 			<a href="https://bsky.app/profile/shawnrenner.com" target="_blank">
@@ -38,6 +41,7 @@ import HeaderLink from './HeaderLink.astro';
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;
@@ -76,6 +80,23 @@ import HeaderLink from './HeaderLink.astro';
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+	}
+	.desktop-title {
+		display: inline;
+	}
+
+	.mobile-title {
+		display: none;
+	}
+
+	@media (max-width: 720px) {
+		.desktop-title {
+			display: none;
+		}
+
+		.mobile-title {
+			display: inline;
 		}
 	}
 </style>
