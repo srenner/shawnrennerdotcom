@@ -4,7 +4,10 @@ import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 
 const projects = await Promise.all(
-	(await getCollection('projects')).map(async (project) => {
+
+	(await getCollection('projects'))
+		.filter(project => !project.data.draft)
+		.map(async (project) => {
 		const { Content } = await render(project);
 		return { project, Content };
 	})
